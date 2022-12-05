@@ -1,5 +1,5 @@
 # win95keys
-...
+[![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/python-app.yml/badge.svg)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/python-app.yml)
 ## A simple program to generate all possible keys for Microsoft Windows 95
 
 ### How to use
