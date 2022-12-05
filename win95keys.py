@@ -1,6 +1,6 @@
 import time, sys, random
 
-def retail_keys():
+def retail_keys(setting=None):
     print("Generating keys, please wait...")
     time.sleep(1)
     valid = []
@@ -13,13 +13,14 @@ def retail_keys():
             result += int(letter)
         if result % 7 == 0:
             fullkey = f"{blacklist}-"+key
-            print(fullkey)
+            if setting != "silent":
+                print(fullkey)
             valid.append(fullkey)
     return valid
 
 if len(sys.argv) > 1:
     if sys.argv[1] == "-r":
-        keys = retail_keys()
+        keys = retail_keys("silent")
         print(f"Random key: {keys[random.randint(0,len(keys))]}")
         quit()
 
