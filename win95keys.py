@@ -1,4 +1,5 @@
 import time, sys, random
+qignore = False
 
 def retail_keys(setting=None):
     print("Generating keys, please wait...")
@@ -23,6 +24,8 @@ if len(sys.argv) > 1:
         keys = retail_keys("silent")
         print(f"Random key: {keys[random.randint(0,len(keys))]}")
         quit()
+    elif sys.argv[1] == "-t":
+        qignore = True
 
 print("Hi there!\nThis simple program generates all possible retail installation keys for Windows 95.")
 print("\nAn example on which the generation is based: 111-11111111")
@@ -31,7 +34,10 @@ print("Source: https://www.youtube.com/watch?v=cwyH59nACzQ\n")
 print("By the way, if you have a wooden PC, the system may slow down a little during the process.")
 print("Well, 'Blacklist' is actually any number between 000 and 332. It will only be used one for all keys.")
 
-question = input("Let's start? ('yes' to start, else - ignore): ")
+if qignore == True:
+    question = "yes"
+else:
+    question = input("Let's start? ('yes' to start, else - ignore): ")
 if question == "yes":
     start_time = time.time()
     keys = retail_keys()
@@ -46,7 +52,11 @@ if question == "yes":
         print(keys[random.randint(0, len(keys))])
 
     print("\n--- Save ---\nIt will take an incredibly long time (+1-2gb on hdd), maybe not?")
-    if input("Save to file? ('yes' to save, else - ignore): ") == "yes":
+    if qignore == True:
+        question = "no pls"
+    else:
+        question = input("Save to file? ('yes' to save, else - ignore): ")
+    if question == "yes":
         print("Please wait..")
         text = ""
         for line in keys:
