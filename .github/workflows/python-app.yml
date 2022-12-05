@@ -25,7 +25,7 @@ jobs:
         python-version: "3.11"
     - name: Run in normal mode
       run: |
-        python3 win95keys.py
+        python3 win95keys.py -t
     - name: Run in random mode
       run: |
         python3 win95keys.py -r
