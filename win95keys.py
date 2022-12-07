@@ -2,10 +2,13 @@ import time
 import sys
 import random
 
+version = "1.0.0"
+
 settings_generate = False
 settings_save = False
 settings_silent = False
 settings_random = False
+settings_version = False
 
 
 def retail_keys():
@@ -28,7 +31,9 @@ def retail_keys():
 
 
 if len(sys.argv) > 1:
-    if "-r" in sys.argv:
+    if "-v" in sys.argv:
+        settings_version = True
+    elif "-r" in sys.argv:
         settings_random = True
         settings_silent = True
     elif "-g" in sys.argv:
@@ -46,6 +51,13 @@ else:
     By the way, if you have a wooden PC,
     the system may slow down a little during the process.
     I recommend using PyPy for faster script performance.
+    """)
+
+if settings_version:
+    print(f"""
+    win95keys
+
+    Version: {version}
     """)
 if settings_random:
     print("Please wait...")

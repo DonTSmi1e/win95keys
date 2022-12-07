@@ -8,8 +8,9 @@
 
 ### Task list
 - [x] Make an optimization
-- [ ] Perform program control with arguments
+- [x] Perform program control with arguments
 - [ ] Optimize work with branches
+- [ ] Release 1.0.0
 
 ### How to use
 ```
@@ -82,6 +83,16 @@ $ python3 win95keys.py -r
 Please wait...
 Generating keys, please wait...
 300-2316599
+```
+
+Finally, use the `-v` argument to find out which version of the program is running.
+
+```
+$ python3 win95keys.py -v
+
+    win95keys
+    
+    Version: 1.0.0
 ```
 
 ### Why is this program needed?
