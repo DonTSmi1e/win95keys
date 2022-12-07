@@ -1,44 +1,57 @@
-import time, sys, random
-qignore = False
+import time
+import sys
+import random
 
-def retail_keys(setting=None):
+settings_generate = False
+settings_save = False
+settings_silent = False
+settings_random = False
+
+
+def retail_keys():
     print("Generating keys, please wait...")
     time.sleep(1)
     valid = []
     blacklist = str(random.randint(100, 333))
-    for key in range(0, 9999999):
+    for temp in range(0, 9999999):
         result = 0
-        key = str(key)
-        key = "0" * (7 - len(key)) + key
-        for letter in key:
+        temp = str(temp)
+        temp = "0" * (7 - len(temp)) + temp
+        for letter in temp:
             result += int(letter)
         if result % 7 == 0:
-            fullkey = f"{blacklist}-"+key
-            if setting != "silent":
+            fullkey = f"{blacklist}-" + temp
+            if not settings_silent:
                 print(fullkey)
             valid.append(fullkey)
     return valid
 
+
 if len(sys.argv) > 1:
-    if sys.argv[1] == "-r":
-        keys = retail_keys("silent")
-        print(f"Random key: {keys[random.randint(0,len(keys))]}")
-        quit()
-    elif sys.argv[1] == "-t":
-        qignore = True
-
-print("Hi there!\nThis simple program generates all possible retail installation keys for Windows 95.")
-print("\nAn example on which the generation is based: 111-11111111")
-print("111 - Blacklist\n1111111 - Sum divisible by 7")
-print("Source: https://www.youtube.com/watch?v=cwyH59nACzQ\n")
-print("By the way, if you have a wooden PC, the system may slow down a little during the process.")
-print("Well, 'Blacklist' is actually any number between 000 and 332. It will only be used one for all keys.")
-
-if qignore == True:
-    question = "yes"
+    if "-r" in sys.argv:
+        settings_random = True
+        settings_silent = True
+    elif "-g" in sys.argv:
+        settings_generate = True
+    elif "-gs" in sys.argv:
+        settings_generate = True
+        settings_save = True
+    if "-s" in sys.argv:
+        settings_silent = True
 else:
-    question = input("Let's start? ('yes' to start, else - ignore): ")
-if question == "yes":
+    print("""
+    Hi there!
+    This simple program generates all possible retail installation keys
+    for Windows 95.
+    By the way, if you have a wooden PC,
+    the system may slow down a little during the process.
+    I recommend using PyPy for faster script performance.
+    """)
+if settings_random:
+    print("Please wait...")
+    keys = retail_keys()
+    print(keys[random.randint(0, len(keys))])
+if settings_generate:
     start_time = time.time()
     keys = retail_keys()
     timer = int(time.time() - start_time)
@@ -46,18 +59,12 @@ if question == "yes":
     print("\nDone!")
     print(f"Keys: {len(keys)}")
     print(f"Time for generate: {timer} seconds")
-
     print("Here are your well-deserved 5 keys.")
     for key in range(0, 5):
         print(keys[random.randint(0, len(keys))])
 
-    print("\n--- Save ---\nIt will take an incredibly long time (+1-2gb on hdd), maybe not?")
-    if qignore == True:
-        question = "no pls"
-    else:
-        question = input("Save to file? ('yes' to save, else - ignore): ")
-    if question == "yes":
-        print("Please wait..")
+    if settings_save:
+        print("Saving keys in keys.txt, please wait..")
         text = ""
         for line in keys:
             text += line + "\n"
