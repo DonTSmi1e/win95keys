@@ -1,6 +1,15 @@
-# win95keys
-[![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/python-app.yml/badge.svg)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/python-app.yml)
+# Win95Keys
+
+| Branch |                                                                                        Run status                                                                                        |
+|:------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|  Main  | [![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml/badge.svg?branch=main)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml) |
+
 ## A simple program to generate all possible keys for Microsoft Windows 95
+
+### Task list
+- [ ] Make an optimization
+- [ ] Perform program control with arguments
+- [ ] Optimize work with branches
 
 ### How to use
 * Clone repository
