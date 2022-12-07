@@ -1,57 +1,99 @@
-# win95keys
-[![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/python-app.yml/badge.svg)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/python-app.yml)
+# Win95Keys
+
+| Branch |                                                                                        Run status                                                                                        |
+|:------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|  Main  | [![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml/badge.svg?branch=main)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml) |
+|  Dev   | [![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml/badge.svg?branch=dev)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml)  |
+
 ## A simple program to generate all possible keys for Microsoft Windows 95
 
+### Task list
+- [x] Make an optimization
+- [x] Perform program control with arguments
+- [ ] Optimize work with branches
+- [ ] Release 1.0.0
+
 ### How to use
-* Clone repository
-* Run win95keys.py
 ```
 $ python3 win95keys.py
-Hi there!
-This simple program generates all possible retail installation keys for Windows 95.
 
-An example on which the generation is based: 111-11111111
-111 - Blacklist
-1111111 - Sum divisible by 7
-Source: https://www.youtube.com/watch?v=cwyH59nACzQ
+    Hi there!
+    This simple program generates all possible retail installation keys
+    for Windows 95.
+    By the way, if you have a wooden PC,
+    the system may slow down a little during the process.
+    I recommend using PyPy for faster script performance.
 
-By the way, if you have a wooden PC, the system may slow down a little during the process.
-Well, 'Blacklist' is actually any number between 000 and 332. It will only be used one for all keys.
-Let's start? ('yes' to start, else - ignore):
 ```
 
-### What's next
-Enter "yes" to start the main program loop. It will last about two minutes.
+Run the program with the `-g` argument for normal mode.
+
 ```
+$ python3 win95keys.py -g
+Generating keys, please wait...
+107-0000000
+107-0000007
+107-0000016
+107-0000025
+107-0000034
+107-0000043
 ...
+```
+
+If you need fast work, you can disable the output with the `-s` argument
+
+```
+$ python3 win95keys.py -g -s
+Generating keys, please wait...
 
 Done!
 Keys: 1428653
-Time for generate: 62 seconds
+Time for generate: 2 seconds
 Here are your well-deserved 5 keys.
-196-2148668
-196-0194016
-196-5019256
-196-6894242
-196-7876383
+193-5226749
+193-2978108
+193-5836733
+193-0817667
+193-3928999
 ```
 
-### Save to file
-To really see all possible keys, you need to save the keys in a txt file. This will take a very long time, since all keys will take ~1 GB.
-```
-...
+You can also save all generated keys to the `keys.txt` file by running the program with the `-gs` argument instead of `-g`
+**_However, this will be a very lengthy process and will also take up 1 GB of your hard drive._**
 
---- Save ---
-It will take an incredibly long time (+1-2gb on hdd), maybe not?
-Save to file? ('yes' to save, else - ignore):
+```
+$ python3 win95keys.py -gs -s
+Generating keys, please wait...
+
+Done!
+Keys: 1428653
+Time for generate: 2 seconds
+Here are your well-deserved 5 keys.
+314-1961774
+314-1081963
+314-5726546
+314-6689319
+314-8597805
+Saving keys in keys.txt, please wait..
 ```
 
-### Special function
-If you run the program with the -r argument, after a couple of minutes you will get one random key.
+As an additional feature, there is a `-r` argument to generate one random key.
+
 ```
 $ python3 win95keys.py -r
+
+Please wait...
 Generating keys, please wait...
-Random key: 302-1624877
+300-2316599
+```
+
+Finally, use the `-v` argument to find out which version of the program is running.
+
+```
+$ python3 win95keys.py -v
+
+    win95keys
+    
+    Version: 1.0.0
 ```
 
 ### Why is this program needed?
