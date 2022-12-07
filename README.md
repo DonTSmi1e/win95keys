@@ -3,6 +3,7 @@
 | Branch |                                                                                        Run status                                                                                        |
 |:------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |  Main  | [![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml/badge.svg?branch=main)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml) |
+|  Dev   | [![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml/badge.svg?branch=dev)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml)  |
 
 ## A simple program to generate all possible keys for Microsoft Windows 95
 
