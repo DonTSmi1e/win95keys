@@ -3,15 +3,8 @@
 | Branch |                                                                                        Run status                                                                                        |
 |:------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |  Main  | [![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml/badge.svg?branch=main)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml) |
-|  Dev   | [![Run](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml/badge.svg?branch=dev)](https://github.com/syntaxerror-usl/win95keys/actions/workflows/run-main.yml)  |
 
 ## A simple program to generate all possible keys for Microsoft Windows 95
-
-### Task list
-- [x] Make an optimization
-- [x] Perform program control with arguments
-- [ ] Optimize work with branches
-- [ ] Release 1.0.0
 
 ### How to use
 ```
@@ -97,4 +90,4 @@ $ python3 win95keys.py -v
 ```
 
 ### Why is this program needed?
-Actually this program is useless. Maybe for educational purposes you will certainly be interested in learning these keys.
+Actually this program is useless.
